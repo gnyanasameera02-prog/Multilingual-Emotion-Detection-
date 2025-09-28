@@ -1,0 +1,6 @@
+flask
+nltk
+textblob
+langdetect
+deep-translator
+werkzeug
