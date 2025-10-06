@@ -8,6 +8,10 @@ from werkzeug.utils import secure_filename
 import os
 import json
 
+app.config['UPLOAD_FOLDER'] = '/tmp/temp_uploads'
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
+
 app = Flask(__name__, static_url_path='/static')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 app.config['UPLOAD_FOLDER'] = 'temp_uploads'
