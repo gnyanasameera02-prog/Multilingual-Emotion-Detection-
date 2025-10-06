@@ -10,6 +10,11 @@ import json
 
 app.config['UPLOAD_FOLDER'] = '/tmp/temp_uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+try:
+    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+except OSError as e:
+    print(f"Error creating upload folder: {e}")
+
 
 
 app = Flask(__name__, static_url_path='/static')
